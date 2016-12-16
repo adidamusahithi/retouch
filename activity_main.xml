@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height = "500dp"
+        android:id="@+id/imageView4"
+        android:src="@drawable/select"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="select a photo"
+        android:textColor="@color/WHITE"
+        android:textStyle="italic"
+        android:id="@+id/selectPhoto"
+        android:textSize="32dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="RETOUCH"
+        android:textColor="@color/colorAccent"
+        android:textStyle="italic"
+        android:textSize="70px"
+        android:id="@+id/retouch"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

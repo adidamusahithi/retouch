@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1" >
+        <ImageButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/backButton"
+            android:src="@drawable/back"
+            android:background="@null"
+            android:layout_gravity="left"
+            android:clickable="true"
+            android:onClick="some_method"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@+id/undoButton" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/undoButton"
+            android:src="@drawable/undo"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/effectsButton"
+            android:layout_toEndOf="@+id/effectsButton" />
+        <ImageButton
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/redoButton"
+            android:src="@drawable/redo"
+            android:background="@null"
+            android:layout_gravity="top"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/toolsButton"
+            android:layout_toStartOf="@+id/toolsButton" />
+
+
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/saveButton"
+            android:src="@drawable/tick"
+            android:background="@null"
+            android:layout_gravity="top"
+            android:clickable="true"
+            android:layout_alignBottom="@+id/redoButton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolsButton"
+            android:src="@drawable/effect"
+            android:background="@null"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/saveButton"
+            android:layout_toStartOf="@+id/saveButton" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="effects"
+            android:id="@+id/effectsButton"
+            android:background="@null"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <ImageView
+            android:id="@+id/viewImage"
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            android:layout_alignRight="@+id/saveButton"
+            android:layout_alignEnd="@+id/saveButton"
+            android:layout_toEndOf="@+id/backButton"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/effectsButton"
+            android:layout_toRightOf="@+id/backButton"
+            android:layout_below="@+id/backButton" />
+        ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/fill"
+            android:layout_toStartOf="@+id/fill" />
+
+
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detect"
+            android:id="@+id/detect"
+            android:background="@null"
+            android:layout_below="@+id/viewImage"
+            android:layout_toRightOf="@+id/undoButton"
+            android:layout_toEndOf="@+id/undoButton" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fill"
+            android:id="@+id/fill"
+            android:background="@null"
+            android:layout_below="@+id/viewImage"
+            android:layout_toLeftOf="@+id/redoButton"
+            android:layout_toStartOf="@+id/redoButton" />
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:background="#FF0000"
+                android:id="@+id/red"
+                android:layout_alignTop="@+id/blue"
+                android:layout_toLeftOf="@+id/blue"
+                android:layout_toStartOf="@+id/blue"
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:background="#0000ff"
+                android:id="@+id/blue"
+                android:layout_alignBottom="@+id/viewImage"
+                android:layout_toLeftOf="@+id/undoButton"
+                android:layout_toStartOf="@+id/undoButton"
+
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+
+                android:id="@+id/yellow"
+                android:background="#ffff00"
+                android:layout_alignBottom="@+id/blue"
+                android:layout_toRightOf="@+id/blue"
+                android:layout_toEndOf="@+id/blue"
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+
+                android:id="@+id/cyan"
+                android:background="#00FFFF"
+                android:layout_alignTop="@+id/yellow"
+                android:layout_toRightOf="@+id/yellow"
+                android:layout_toEndOf="@+id/yellow"
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+
+                android:id="@+id/gray"
+                android:background="#808080"
+                android:layout_alignTop="@+id/cyan"
+                android:layout_toRightOf="@+id/cyan"
+                android:layout_toEndOf="@+id/cyan"
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+
+                android:id="@+id/green"
+                android:background="#008000"
+                android:layout_alignBottom="@+id/viewImage"
+                android:layout_toRightOf="@+id/gray"
+                android:layout_toEndOf="@+id/gray"
+
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+
+                android:id="@+id/magenta"
+                android:background="#ff00ff"
+                android:layout_alignBottom="@+id/viewImage"
+                android:layout_toRightOf="@+id/green"
+                android:layout_toEndOf="@+id/green"
+
+                />
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+
+                android:id="@+id/white"
+                android:background="#ffffff"
+                android:layout_alignBottom="@+id/viewImage"
+                android:layout_toRightOf="@+id/green"
+                android:layout_toEndOf="@+id/green"
+
+                />
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+
+                android:id="@+id/black"
+                android:background="#000000"
+                android:layout_alignBottom="@+id/viewImage"
+                android:layout_toRightOf="@+id/green"
+                android:layout_toEndOf="@+id/green"
+
+                />
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+
+                android:id="@+id/transperent"
+                android:background="#00ffffff"
+                android:layout_alignBottom="@+id/viewImage"
+                android:layout_toRightOf="@+id/green"
+                android:layout_toEndOf="@+id/green"
+
+                />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>
